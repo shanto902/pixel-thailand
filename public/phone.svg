@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="6 6 15 15" fill="white" shape-rendering="crispEdges">
+    <rect x="6" y="7" width="1" height="7" />
+    <rect x="7" y="14" width="1" height="1" />
+    <rect x="8" y="15" width="1" height="1" />
+    <rect x="9" y="16" width="1" height="1" />
+    <rect x="10" y="17" width="1" height="1" />
+    <rect x="11" y="18" width="1" height="1" />
+    <polygon points="12,19 12,20 18,20 19,20 19,19 18,19" />
+    <rect x="10" y="10" width="1" height="1" />
+    <rect x="9" y="7" width="1" height="1" />
+    <rect x="7" y="6" width="2" height="1" />
+    <rect x="10" y="8" width="1" height="1" />
+    <rect x="11" y="9" width="1" height="1" />
+    <polygon points="9,12 9,13 9,14 10,14 10,13 10,12 10,11 9,11" />
+    <rect x="10" y="14" width="1" height="1" />
+    <rect x="11" y="15" width="1" height="1" />
+    <polygon points="13,17 14,17 15,17 15,16 14,16 13,16 12,16 12,17" />
+    <rect x="19" y="17" width="1" height="2" />
+    <rect x="16" y="14" width="1" height="1" />
+    <rect x="15" y="15" width="1" height="1" />
+    <rect x="17" y="15" width="1" height="1" />
+    <rect x="18" y="16" width="1" height="1" />
+</svg>
