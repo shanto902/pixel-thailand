@@ -1,6 +1,6 @@
-import bowlingImage from "@/assets/bowling.jpg";
-import supergridImage from "@/assets/supergrid.jpg";
-import golfImage from "@/assets/golf-sim.jpg";
+import strikeZone from "@/assets/STRIKE ZONE UNLOCKED.jpg";
+import dominateGrid from "@/assets/DOMINATE THE GRID.jpg";
+import virtualMajor from "@/assets/VIRTUAL MAJORS.jpg";
 
 interface AttractionCardProps {
   title: string;
@@ -33,8 +33,7 @@ const AttractionCard = ({
             alt={title}
             className="w-full h-64 md:h-80 object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-cyan-400/80 to-transparent" />
-          <div className="absolute inset-0 scanlines opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         </div>
         {/* Pixel corner decorations */}
         <div className="absolute -top-2 -left-2 w-4 h-4 bg-cyan-400" />
@@ -79,21 +78,21 @@ const AttractionsSection = () => {
       subtitle: "STRIKE ZONE UNLOCKED",
       description:
         "Gather your friends or family and enjoy a round on our three sleek, modern bowling alleys. Ideal for social competition or a unique date.",
-      image: bowlingImage,
+      image: strikeZone,
     },
     {
       title: "SAMUI'S EXCLUSIVE CHALLENGE",
       subtitle: "DOMINATE THE GRID",
       description:
         "Test your speed, skill, and reflexes on the only competitive Super Grid game in the region. This high-energy, light-reaction game is perfect for students and competitive friends seeking the ultimate high score bragging rights.",
-      image: supergridImage,
+      image: dominateGrid,
     },
     {
       title: "TEE OFF RAIN OR SHINE",
       subtitle: "VIRTUAL MAJORS",
       description:
         "Experience the most realistic golf simulation on the island. Play world-famous courses, practice your swing, or enjoy a friendly challenge with a drink in hand.",
-      image: golfImage,
+      image: virtualMajor,
     },
   ];
 

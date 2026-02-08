@@ -9,8 +9,10 @@ import hero3 from "/hero/pic3.jpg";
 import hero4 from "/hero/pic4.jpg";
 
 const images = [hero1, hero2, hero3, hero4];
-
-const HeroSection = () => {
+type HeroSectionProps = {
+  onOpenMenu?: () => void;
+};
+const HeroSection = ({ onOpenMenu }: HeroSectionProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -65,30 +67,50 @@ const HeroSection = () => {
           >
             ARCADE UNLEASHED
           </h1>
-          <h2
+          {/* <h2
             className="font-pixel text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-8"
             style={{ fontFamily: '"Press Start 2P", cursive' }}
           >
             PIXEL IS NOW OPEN IN KOH SAMUI!
-          </h2>
+          </h2> */}
 
           {/* Subheadline */}
           <p className="font-body text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
             The Island's Newest Entertainment Destination is Here. Explore the{" "}
-            <span className="text-white font-semibold">Pixel Arcade</span> and
-            the <span className="text-secondary font-semibold">Pixel Café</span>
+            <span
+              className="text-white font-semibold text-sm"
+              style={{ fontFamily: '"Press Start 2P", cursive' }}
+            >
+              Pixel Arcade
+            </span>{" "}
+            and the{" "}
+            <span
+              className="text-white font-semibold text-sm"
+              style={{ fontFamily: '"Press Start 2P", cursive' }}
+            >
+              Pixel Café
+            </span>
             , the perfect fun day or night out.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button
+            <a
+              href={
+                "https://wa.me/66935813088?text=" +
+                encodeURIComponent("*Coin Inserted*")
+              }
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-cyan-400 skew-x-[-12deg] rounded-lg hover:bg-purple-400 inline-block px-3 py-2 text-sm font-bold transition-colors duration-300 mt-5"
               style={{ fontFamily: '"Press Start 2P", cursive' }}
             >
               INSERT TOKEN
-            </button>
+            </a>
+
             <button
+              type="button"
+              onClick={onOpenMenu}
               className="hover:bg-cyan-400 skew-x-[-12deg] rounded-lg bg-purple-400 inline-block px-3 py-2 text-sm font-bold transition-colors duration-300 mt-5"
               style={{ fontFamily: '"Press Start 2P", cursive' }}
             >

@@ -71,7 +71,7 @@ export default function Packages() {
             >
               <span className="text-cyan-400">350 THB</span>
               <span className="text-white/60"> | </span>
-              <span className="text-purple-400">PERSON</span>
+              <span className="text-purple-400">LANE</span>
             </div>
           </div>
 
@@ -114,7 +114,7 @@ export default function Packages() {
             >
               <span className="text-cyan-400">1,200 THB</span>
               <span className="text-white/60"> | </span>
-              <span className="text-purple-400">PERSON</span>
+              <span className="text-purple-400">LANE</span>
             </div>
           </div>
 
@@ -158,7 +158,7 @@ export default function Packages() {
             >
               <span className="text-cyan-400">4,500 THB</span>
               <span className="text-white/60"> | </span>
-              <span className="text-purple-400">PERSON</span>
+              <span className="text-purple-400">LANE</span>
             </div>
           </div>
 

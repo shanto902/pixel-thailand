@@ -12,6 +12,40 @@ import HeroSection from "@/components/section/HeroSection";
 import AttractionsSection from "@/components/section/AttractionsSection";
 import FuelSection from "@/components/section/FuelSection";
 import LocationSection from "@/components/section/LocationSection";
+import ImageCarousel, {
+  CarouselImageItem,
+} from "@/components/section/ImageCarousel";
+
+export const demoCarouselItems: CarouselImageItem[] = [
+  {
+    image: "/carousel/Big Bowl Theory.jpg",
+    accentColor: "primary",
+  },
+  {
+    image: "/carousel/Cupid's Arrow.jpg",
+    accentColor: "secondary",
+  },
+  {
+    image: "/carousel/Dance Dance Evolution.jpg",
+    accentColor: "primary",
+  },
+  {
+    image: "/carousel/Drift King.jpg",
+    accentColor: "secondary",
+  },
+  {
+    image: "/carousel/Ghost Rider.jpg",
+    accentColor: "primary",
+  },
+  {
+    image: "/carousel/Hammer Time.jpg",
+    accentColor: "secondary",
+  },
+  {
+    image: "/carousel/iPad Air Hockey.jpg",
+    accentColor: "secondary",
+  },
+];
 
 const Index = () => {
   const [showDim, setShowDim] = useState(false);
@@ -74,10 +108,13 @@ const Index = () => {
           </div>
         </section>
 
-        <HeroSection />
+        <HeroSection onOpenMenu={() => setModalOpen(true)} />
 
         <section id="attractions">
           <AttractionsSection />
+        </section>
+        <section>
+          <ImageCarousel items={demoCarouselItems} />
         </section>
 
         <section>

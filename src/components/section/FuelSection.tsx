@@ -1,5 +1,5 @@
-import arcadeBarImage from "@/assets/arcade-bar.jpg";
-import pixelCafeImage from "@/assets/pixel-cafe.jpg";
+import arcadeBarImage from "@/assets/THE ARCADE BAR.jpg";
+import pixelCafeImage from "@/assets/THE PIXEL CAFÉ.jpg";
 import { Utensils, Wine } from "lucide-react";
 
 interface VenueCardProps {
@@ -111,7 +111,7 @@ const FuelSection = () => {
   return (
     <section className="py-20 md:py-32  relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400" />
+
       <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400" />
 
       <div className="container mx-auto px-4 relative z-10">
