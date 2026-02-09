@@ -30,15 +30,8 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
             showButtons
               ? "translate-y-0 opacity-100"
               : "-translate-y-10 opacity-0"
-          } flex gap-2`}
+          } flex flex-col items-end gap-2`}
         >
-          <button
-            onClick={onOpenMenu}
-            className="bg-cyan-400 hover:bg-purple-400 text-black px-3 py-1 text-xs font-bold transition-colors duration-300"
-            style={{ fontFamily: '"Press Start 2P", cursive' }}
-          >
-            IZAKAYA MENU
-          </button>
           <Link
             to={`/packages`}
             className="bg-cyan-400 hover:bg-purple-400 text-black px-3 py-1 text-xs font-bold transition-colors duration-300"
@@ -46,6 +39,13 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
           >
             ARCADE PACKAGES
           </Link>
+          <button
+            onClick={onOpenMenu}
+            className="bg-cyan-400 hover:bg-purple-400 text-black px-3 py-1 text-xs font-bold transition-colors duration-300"
+            style={{ fontFamily: '"Press Start 2P", cursive' }}
+          >
+            IZAKAYA MENU
+          </button>
 
           <button
             onClick={scrollToLocation}
