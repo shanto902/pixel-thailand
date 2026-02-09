@@ -88,7 +88,7 @@ const HeroSection = ({ onOpenMenu }: HeroSectionProps) => {
               className="text-white font-semibold text-sm"
               style={{ fontFamily: '"Press Start 2P", cursive' }}
             >
-              Pixel Café
+              Piko Piko Izakaya
             </span>
             , the perfect fun day or night out.
           </p>

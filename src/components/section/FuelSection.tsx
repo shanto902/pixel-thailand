@@ -98,10 +98,10 @@ const FuelSection = () => {
       accentColor: "primary" as const,
     },
     {
-      title: "FULL DINING EXPERIENCE",
-      subtitle: "THE PIXEL CAFÉ",
+      title: "THE SOCIAL ENGINE",
+      subtitle: "PIKO PIKO IZAKAYA",
       description:
-        "The separate Pixel Café is our dedicated dining destination. It features a full, comprehensive Thai and Westernized menu designed to satisfy both locals and international tourists. The Café bar is a full-service bar for all local and international drinks, including a large list of quality beers on tap.",
+        'Welcome to the Social Engine. Piko Piko Izakaya transforms dining from a heavy time commitment into a fluid, high-energy experience. Inspired by the neon-lit back alleys of Shinjuku, we’ve replaced the traditional sit-down meal with a "grazing" culture of smoky Yakitori, fresh Hamachi Sashimi, and addictive Agemono small plates.',
       image: pixelCafeImage,
       icon: <Utensils className="w-6 h-6 text-secondary-black" />,
       accentColor: "secondary" as const,
@@ -132,11 +132,12 @@ const FuelSection = () => {
             FUEL YOUR FUN
           </h2>
           <h3 className="font-pixel text-sm md:text-base text-purple-400 text-glow-purple mb-6">
-            ARCADE & CAFÉ
+            ARCADE & IZAKAYA
           </h3>
           <p className="font-body text-gray-400 max-w-2xl mx-auto">
-            Two distinct experiences under one destination. Quick bites at the
-            Arcade Bar or a full dining adventure at the Pixel Café.
+            A seamless experience under one roof. Fuel your win with a
+            continuous flow of Izakaya small plates and neon-lit recharges at
+            Piko Piko.
           </p>
         </div>
 

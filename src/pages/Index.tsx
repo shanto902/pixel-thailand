@@ -6,7 +6,7 @@ import GoogleMapEmbed from "@/components/GoogleMapEmbed";
 import LocationPage from "@/components/LocationPage";
 import { ChevronDown, LocateIcon, MapIcon, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
-import PDFModal from "@/components/PDFModal";
+import FlipbookModal from "@/components/FlipbookModal";
 
 import HeroSection from "@/components/section/HeroSection";
 import AttractionsSection from "@/components/section/AttractionsSection";
@@ -15,6 +15,7 @@ import LocationSection from "@/components/section/LocationSection";
 import ImageCarousel, {
   CarouselImageItem,
 } from "@/components/section/ImageCarousel";
+import ConversionPopup from "@/components/ConversionPopup";
 
 export const demoCarouselItems: CarouselImageItem[] = [
   {
@@ -138,11 +139,8 @@ const Index = () => {
         </section>
       </div>
 
-      <PDFModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        pdfUrl="/menu.pdf"
-      />
+      <FlipbookModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+      <ConversionPopup onOpenMenu={() => setModalOpen(true)} />
     </>
   );
 };

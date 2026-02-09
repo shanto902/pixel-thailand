@@ -85,13 +85,13 @@ const LocationSection = () => {
                 </p>
               </div>
 
-              {/* Café Hours */}
+              {/* RESTAURANT Hours */}
               <div className="text-center space-y-4">
                 <div className="w-16 h-16 mx-auto border-4 border-cyan-400 flex items-center justify-center bg-cyan-400/10">
                   <img src="/clock.svg" alt="Clock Icon" className="w-8 h-8" />
                 </div>
                 <h4 className="font-pixel text-xs text-cyan-400 uppercase tracking-wider">
-                  Café Hours
+                  RESTAURANT Hours
                 </h4>
                 <p className="font-body text-gray-400 text-sm">
                   Noon to Midnight
