@@ -63,7 +63,13 @@ const ConversionPopup: React.FC<ConversionPopupProps> = ({ onOpenMenu }) => {
           <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-zinc-950 via-zinc-900/80 to-transparent z-0" />{" "}
           {/* Bottom gradient for text */}
           {/* Header */}
-          <div className="mb-6 space-y-2 relative z-10 w-full">
+          <div className="mb-6 space-y-2 relative z-10 w-full flex flex-col items-center">
+            <img
+              src="/pikapikologo.png"
+              alt="Pika Piko Logo"
+              className="w-32 h-auto object-contain mb-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+            />
+
             <h2
               className="text-cyan-400 font-bold text-lg md:text-2xl tracking-widest animate-pulse drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"
               style={{ fontFamily: '"Press Start 2P", cursive' }}
