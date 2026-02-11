@@ -47,55 +47,95 @@ const ConversionPopup: React.FC<ConversionPopupProps> = ({ onOpenMenu }) => {
         </button>
 
         {/* Inner Content Container */}
-        <div className="bg-zinc-900 border-2 border-purple-500 p-4 md:p-6 flex flex-col items-center text-center relative overflow-hidden">
-          {/* Decorative Elements */}
-          <div className="absolute inset-0 pointer-events-none opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900 via-transparent to-transparent" />
-
+        <div className="bg-zinc-900 border-2 border-purple-500 p-6 md:p-8 flex flex-col items-center text-center relative overflow-hidden w-full max-w-md mx-auto rounded-lg shadow-2xl">
+          {/* Background Video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-0 opacity-60"
+          >
+            <source src="/videos/promo-video.mp4" type="video/mp4" />
+          </video>
+          {/* Gradients for readability */}
+          <div className="absolute inset-0 bg-black/30 z-0" />
+          <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-zinc-950 via-zinc-900/80 to-transparent z-0" />{" "}
+          {/* Bottom gradient for text */}
           {/* Header */}
-          <div className="mb-4 space-y-2 relative z-10">
+          <div className="mb-6 space-y-2 relative z-10 w-full">
             <h2
-              className="text-cyan-400 font-bold text-base md:text-lg tracking-widest animate-pulse"
+              className="text-cyan-400 font-bold text-lg md:text-2xl tracking-widest animate-pulse drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"
               style={{ fontFamily: '"Press Start 2P", cursive' }}
             >
-              LEVEL UNLOCKED
+              Promo Offers!
             </h2>
-            <h3
-              className="text-white text-lg md:text-xl font-bold"
-              style={{ fontFamily: '"Press Start 2P", cursive' }}
-            >
-              09.02.2026 🔓
-            </h3>
           </div>
+          {/* Main Content */}
+          <div className="relative z-10 w-full text-left space-y-6">
+            {/* Sake Section */}
+            <div className="bg-purple-900/40 border border-purple-500/30 p-4 rounded-lg backdrop-blur-sm">
+              <p
+                className="text-yellow-400 font-bold text-sm  mb-2 text-center"
+                style={{ fontFamily: '"Press Start 2P", cursive' }}
+              >
+                🍶 SAKE & WINE PROMO! 🍷
+              </p>
+              <div className="flex justify-center items-center border-t border-purple-500/30 pt-2 mt-2">
+                <span className="text-gray-200 text-center font-mono text-xs md:text-sm">
+                  15% OFF on ALL SAKE
+                </span>
+              </div>
+              <div className="flex justify-between items-center pt-2">
+                <span className="text-gray-200 font-mono text-xs md:text-sm">
+                  Bottle of WINE
+                </span>
+                <span className="text-cyan-400 font-bold font-mono text-sm md:text-base">
+                  now 790/-
+                </span>
+              </div>
+            </div>
 
-          {/* Main Copy */}
-          <p className="text-gray-300 mb-6 font-mono text-xs md:text-sm leading-relaxed">
-            <span className="text-purple-400 font-bold">Piko Piko Izakaya</span>{" "}
-            is officially going LIVE at Haven Mall. Be the first to experience
-            Chaweng’s new home for{" "}
-            <span className="text-cyan-400 font-bold">
-              Yakitori,Highballs and Neon Vibes.
-            </span>
-          </p>
+            {/* Divider */}
+            <div className="flex items-center justify-center space-x-2 opacity-50">
+              <div className="h-px bg-purple-500 w-12"></div>
+              <span className="text-purple-400 text-xs">★ ★ ★</span>
+              <div className="h-px bg-purple-500 w-12"></div>
+            </div>
 
-          {/* Promo Box */}
-          <div className="bg-purple-900/30 border border-purple-500/50 p-3 md:p-4 mb-6 w-full rounded">
-            <p className="text-cyan-300 text-[10px] md:text-xs font-bold mb-1 uppercase tracking-wider">
-              Launch Promo
-            </p>
-            <p className="text-white text-xs md:text-sm italic">
-              Join the loop on opening night (Feb 9th) and get a{" "}
-              <span className="text-yellow-400 font-bold">
-                COMPLIMENTARY PIXEL SAKE BOMB
-              </span>{" "}
-              with your first order of the 'Piko Piko Sharing Set'
-            </p>
+            {/* Beer Tower Section */}
+            <div className="bg-cyan-900/30 border border-cyan-500/30 p-4 rounded-lg backdrop-blur-sm">
+              <h3
+                className="text-yellow-400 font-bold text-sm mb-3 text-center uppercase tracking-wider"
+                style={{ fontFamily: '"Press Start 2P", cursive' }}
+              >
+                BEER TOWER PROMO! 🍺
+              </h3>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-200 font-mono text-xs md:text-sm">
+                    ASAHI Tower (3L)
+                  </span>
+                  <span className="text-pink-400 font-bold font-mono text-sm md:text-base">
+                    now 890/-
+                  </span>
+                </div>
+                <div className="flex justify-between items-center border-t border-cyan-500/20 pt-2">
+                  <span className="text-gray-200 font-mono text-xs md:text-sm">
+                    CHANG Tower (3L)
+                  </span>
+                  <span className="text-pink-400 font-bold font-mono text-sm md:text-base">
+                    now 599/-
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
-
           {/* CTA */}
           <button
             onClick={handleView}
             type="button"
-            className="w-full bg-cyan-400 hover:bg-cyan-300 text-black font-bold py-3 px-6 transform skew-x-[-12deg] transition-all hover:scale-105 active:scale-95 border-b-4 border-cyan-600 active:border-b-0 active:translate-y-1"
+            className="w-full mt-8 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 px-6 rounded shadow-[0_0_15px_rgba(168,85,247,0.5)] transform transition-all hover:scale-[1.02] active:scale-95 border-b-4 border-purple-800 active:border-b-0 active:translate-y-1 relative z-10"
             style={{ fontFamily: '"Press Start 2P", cursive' }}
           >
             VIEW MENU
