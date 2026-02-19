@@ -14,25 +14,29 @@ import ScrollToTop from "./utlis/scroll-to-top";
 import Packages from "./pages/Packages";
 const queryClient = new QueryClient();
 
+import { VideoProvider } from "./context/VideoContext";
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <HelmetProvider>
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/launch" element={<PixelEvent />} />
-            <Route path="/packages" element={<Packages />} />
-            {/* <Route path="/demo" element={<Launch />} /> */}
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <WhatsAppFloating />
-          <PixelFooter />
-        </BrowserRouter>
+        <VideoProvider>
+          <BrowserRouter>
+            <ScrollToTop />
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/launch" element={<PixelEvent />} />
+              <Route path="/packages" element={<Packages />} />
+              {/* <Route path="/demo" element={<Launch />} /> */}
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <WhatsAppFloating />
+            <PixelFooter />
+          </BrowserRouter>
+        </VideoProvider>
       </HelmetProvider>
     </TooltipProvider>
   </QueryClientProvider>

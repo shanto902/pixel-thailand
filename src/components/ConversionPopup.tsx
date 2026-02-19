@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
+import { useVideoContext } from "@/context/VideoContext";
 
 export interface ConversionPopupProps {
   onOpenMenu?: () => void;
@@ -7,6 +8,7 @@ export interface ConversionPopupProps {
 
 const ConversionPopup: React.FC<ConversionPopupProps> = ({ onOpenMenu }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { setPopupOpen } = useVideoContext();
 
   useEffect(() => {
     // Check if the popup has been shown in this session
@@ -21,6 +23,10 @@ const ConversionPopup: React.FC<ConversionPopupProps> = ({ onOpenMenu }) => {
       return () => clearTimeout(timer);
     }
   }, []);
+
+  useEffect(() => {
+    setPopupOpen(isOpen);
+  }, [isOpen, setPopupOpen]);
 
   const handleClose = () => {
     setIsOpen(false);

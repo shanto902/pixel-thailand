@@ -1,6 +1,7 @@
 // If you are in Next.js App Router, add this
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { ChevronDown, Volume2, VolumeX } from "lucide-react";
+import { useVideoIntersection } from "@/hooks/useVideoIntersection";
 
 type HeroSectionProps = {
   onOpenMenu?: () => void;
@@ -8,7 +9,7 @@ type HeroSectionProps = {
 
 const HeroSection = ({ onOpenMenu }: HeroSectionProps) => {
   const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const { videoRef } = useVideoIntersection("hero-video");
 
   const toggleAudio = () => {
     if (videoRef.current) {
@@ -27,7 +28,6 @@ const HeroSection = ({ onOpenMenu }: HeroSectionProps) => {
         <video
           ref={videoRef}
           className="absolute min-w-full min-h-full object-cover"
-          autoPlay
           loop
           muted
           playsInline

@@ -46,7 +46,34 @@ export const demoCarouselItems: CarouselImageItem[] = [
     image: "/carousel/iPad Air Hockey.jpg",
     accentColor: "secondary",
   },
+  {
+    image: "/carousel/iPad Air Hockey.jpg",
+    accentColor: "secondary",
+  },
 ];
+
+import { useVideoIntersection } from "@/hooks/useVideoIntersection";
+
+const IntroVideo = () => {
+  const { videoRef } = useVideoIntersection("intro-video");
+
+  return (
+    <video
+      ref={videoRef}
+      className="absolute top-0 left-0 w-full h-full object-cover"
+      loop
+      muted
+      playsInline
+    >
+      <source
+        src="/videos/720p.mp4"
+        type="video/mp4"
+        media="(max-width: 768px)"
+      />
+      <source src="/videos/1080p.mp4" type="video/mp4" />
+    </video>
+  );
+};
 
 const Index = () => {
   const [showDim, setShowDim] = useState(false);
@@ -74,20 +101,7 @@ const Index = () => {
 
           <div className="flex flex-col justify-between h-screen overflow-hidden">
             {/* Background Video */}
-            <video
-              className="absolute top-0 left-0 w-full h-full object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-            >
-              <source
-                src="/videos/720p.mp4"
-                type="video/mp4"
-                media="(max-width: 768px)"
-              />
-              <source src="/videos/1080p.mp4" type="video/mp4" />
-            </video>
+            <IntroVideo />
 
             {/* Dim overlay */}
             <div
