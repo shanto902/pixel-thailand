@@ -1,48 +1,56 @@
 // If you are in Next.js App Router, add this
-import { useEffect, useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { useState, useRef } from "react";
+import { ChevronDown, Volume2, VolumeX } from "lucide-react";
 
-// Import your hero images
-import hero1 from "/hero/pic1.jpg";
-import hero2 from "/hero/pic2.jpg";
-import hero3 from "/hero/pic3.jpg";
-import hero4 from "/hero/pic4.jpg";
-
-const images = [hero1, hero2, hero3, hero4];
 type HeroSectionProps = {
   onOpenMenu?: () => void;
 };
+
 const HeroSection = ({ onOpenMenu }: HeroSectionProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 5000); // change slide every 5 seconds
-
-    return () => clearInterval(interval);
-  }, []);
+  const toggleAudio = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
 
   return (
     <section
       id="landing-page"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background carousel */}
-      <div className="absolute inset-0">
-        {images.map((img, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
-              index === currentIndex ? "opacity-100" : "opacity-0"
-            }`}
-            style={{ backgroundImage: `url(${img})` }}
-          />
-        ))}
+      {/* Background Video */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <video
+          ref={videoRef}
+          className="absolute min-w-full min-h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/videos/Pixel.mp4" type="video/mp4" />
+        </video>
       </div>
 
+      {/* Retro Audio Control Button */}
+      <button
+        onClick={toggleAudio}
+        className="absolute bottom-28 left-1/2 transform -translate-x-1/2 z-50 p-3 bg-yellow-400 text-black border-4 border-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:bg-yellow-300 hover:scale-105 transition-all active:scale-95 active:shadow-none"
+        aria-label={isMuted ? "Unmute video" : "Mute video"}
+      >
+        {isMuted ? (
+          <VolumeX className="w-6 h-6" />
+        ) : (
+          <Volume2 className="w-6 h-6" />
+        )}
+      </button>
+
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050734]/20 via-[#050734]/80 backdrop-blur-sm to-[#050734]/20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#050734]/40 via-[#050734]/80 backdrop-blur-[2px] to-[#050734]/60" />
 
       {/* Content */}
       <div className="z-10 container mx-auto px-4 text-center">
