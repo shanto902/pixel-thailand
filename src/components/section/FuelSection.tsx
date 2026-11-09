@@ -1,6 +1,5 @@
 import arcadeBarImage from "@/assets/THE ARCADE BAR.jpg";
-import pixelCafeImage from "@/assets/THE PIXEL CAFÉ.jpg";
-import { Utensils, Wine } from "lucide-react";
+import { Wine } from "lucide-react";
 
 interface VenueCardProps {
   title: string;
@@ -92,19 +91,10 @@ const FuelSection = () => {
       title: "FAST FUEL & FAVORITES",
       subtitle: "THE ARCADE BAR",
       description:
-        "The Arcade building focuses on maximizing playtime. The bar here serves quick, essential refreshments: soft drinks, popular bottled beers, and a selection of favorite cocktails. The food menu is strictly snack and fast-food, hand-held items—perfect for quick, energized breaks.",
+        "The Arcade building focuses on maximizing playtime. The bar here serves quick, essential refreshments: soft drinks, popular bottled beers, and a selection of favorite cocktails. Food is strictly snack and fast-food, hand-held items—perfect for quick, energized breaks.",
       image: arcadeBarImage,
       icon: <Wine className="w-6 h-6 text-primary-black" />,
       accentColor: "primary" as const,
-    },
-    {
-      title: "THE SOCIAL ENGINE",
-      subtitle: "PIKO PIKO IZAKAYA",
-      description:
-        'Welcome to the Social Engine. Piko Piko Izakaya transforms dining from a heavy time commitment into a fluid, high-energy experience. Inspired by the neon-lit back alleys of Shinjuku, we’ve replaced the traditional sit-down meal with a "grazing" culture of smoky Yakitori, fresh Hamachi Sashimi, and addictive Agemono small plates.',
-      image: pixelCafeImage,
-      icon: <Utensils className="w-6 h-6 text-secondary-black" />,
-      accentColor: "secondary" as const,
     },
   ];
 
@@ -132,17 +122,16 @@ const FuelSection = () => {
             FUEL YOUR FUN
           </h2>
           <h3 className="font-pixel text-sm md:text-base text-purple-400 text-glow-purple mb-6">
-            ARCADE & IZAKAYA
+            THE ARCADE BAR
           </h3>
           <p className="font-body text-gray-400 max-w-2xl mx-auto">
-            A seamless experience under one roof. Fuel your win with a
-            continuous flow of Izakaya small plates and neon-lit recharges at
-            Piko Piko.
+            Quick drinks and hand-held bites so you can get straight back to
+            the games.
           </p>
         </div>
 
         {/* Venues Grid */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid gap-8 max-w-xl mx-auto">
           {venues.map((venue, index) => (
             <VenueCard key={index} {...venue} />
           ))}

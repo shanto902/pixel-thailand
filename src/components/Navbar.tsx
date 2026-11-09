@@ -3,11 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import PDFModal from "./PDFModal";
 
-interface NavbarProps {
-  onOpenMenu: () => void;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
+const Navbar: React.FC = () => {
   const [showButtons, setShowButtons] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   useEffect(() => {
@@ -39,14 +35,6 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
           >
             ARCADE PACKAGES
           </Link>
-          <button
-            onClick={onOpenMenu}
-            className="bg-cyan-400 hover:bg-purple-400 text-black px-3 py-1 text-xs font-bold transition-colors duration-300"
-            style={{ fontFamily: '"Press Start 2P", cursive' }}
-          >
-            IZAKAYA MENU
-          </button>
-
           <button
             onClick={scrollToLocation}
             className="bg-cyan-400 hover:bg-purple-400 text-black px-3 py-1 text-xs font-bold transition-colors duration-300"

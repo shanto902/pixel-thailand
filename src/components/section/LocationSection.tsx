@@ -46,7 +46,7 @@ const LocationSection = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
               {/* Address */}
               <div className="text-center space-y-4">
                 <div className="w-16 h-16 mx-auto border-4 border-cyan-400 flex items-center justify-center bg-cyan-400/10">
@@ -85,22 +85,6 @@ const LocationSection = () => {
                 </p>
               </div>
 
-              {/* RESTAURANT Hours */}
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 mx-auto border-4 border-cyan-400 flex items-center justify-center bg-cyan-400/10">
-                  <img src="/clock.svg" alt="Clock Icon" className="w-8 h-8" />
-                </div>
-                <h4 className="font-pixel text-xs text-cyan-400 uppercase tracking-wider">
-                  RESTAURANT Hours
-                </h4>
-                <p className="font-body text-gray-400 text-sm">
-                  Noon to Midnight
-                  <br />
-                  <span className="text-gray-200 font-semibold">
-                    12 PM - 12 AM
-                  </span>
-                </p>
-              </div>
               {/* Phone */}
               <div className="text-center space-y-4">
                 <div className="w-16 h-16 mx-auto border-4 border-purple-400 flex items-center justify-center bg-purple-400/10">

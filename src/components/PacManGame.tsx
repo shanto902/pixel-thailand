@@ -32,8 +32,8 @@ const PacManGame = () => {
   const [gameStarted, setGameStarted] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [level, setLevel] = useState(1);
-  const gameLoopRef = useRef<number>();
-  const backgroundLoopRef = useRef<number>();
+  const gameLoopRef = useRef<number | undefined>(undefined);
+  const backgroundLoopRef = useRef<number | undefined>(undefined);
 
   const pacmanRef = useRef<Position>({ x: 1, y: 1 });
   const directionRef = useRef<Position>({ x: 0, y: 0 });

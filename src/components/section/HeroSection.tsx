@@ -3,11 +3,7 @@ import { useState, useEffect } from "react";
 import { ChevronDown, Volume2, VolumeX } from "lucide-react";
 import { useVideoIntersection } from "@/hooks/useVideoIntersection";
 
-type HeroSectionProps = {
-  onOpenMenu?: () => void;
-};
-
-const HeroSection = ({ onOpenMenu }: HeroSectionProps) => {
+const HeroSection = () => {
   const [isMuted, setIsMuted] = useState(true);
   const [showUnmuteHint, setShowUnmuteHint] = useState(false);
   const { videoRef } = useVideoIntersection("hero-video");
@@ -76,7 +72,6 @@ const HeroSection = ({ onOpenMenu }: HeroSectionProps) => {
           </div>
         )}
       </div>
-      ```
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#050734]/40 via-[#050734]/80 backdrop-blur-[2px] to-[#050734]/60" />
       {/* Content */}
@@ -113,17 +108,10 @@ const HeroSection = ({ onOpenMenu }: HeroSectionProps) => {
           <p className="font-body text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
             The Island's Newest Entertainment Destination is Here. Explore the{" "}
             <span
-              className="text-white font-semibold text-sm"
+              className="text-white font-semibold text-sm whitespace-nowrap"
               style={{ fontFamily: '"Press Start 2P", cursive' }}
             >
               Pixel Arcade
-            </span>{" "}
-            and the{" "}
-            <span
-              className="text-white font-semibold text-sm"
-              style={{ fontFamily: '"Press Start 2P", cursive' }}
-            >
-              Piko Piko Izakaya
             </span>
             , the perfect fun day or night out.
           </p>
@@ -143,14 +131,6 @@ const HeroSection = ({ onOpenMenu }: HeroSectionProps) => {
               INSERT TOKEN
             </a>
 
-            <button
-              type="button"
-              onClick={onOpenMenu}
-              className="hover:bg-cyan-400 skew-x-[-12deg] rounded-lg bg-purple-400 inline-block px-3 py-2 text-sm font-bold transition-colors duration-300 mt-5"
-              style={{ fontFamily: '"Press Start 2P", cursive' }}
-            >
-              EXPLORE MENU
-            </button>
           </div>
 
           {/* Scroll indicator */}

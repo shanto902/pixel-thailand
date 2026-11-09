@@ -6,7 +6,6 @@ import GoogleMapEmbed from "@/components/GoogleMapEmbed";
 import LocationPage from "@/components/LocationPage";
 import { ChevronDown, LocateIcon, MapIcon, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
-import FlipbookModal from "@/components/FlipbookModal";
 
 import HeroSection from "@/components/section/HeroSection";
 import AttractionsSection from "@/components/section/AttractionsSection";
@@ -15,8 +14,6 @@ import LocationSection from "@/components/section/LocationSection";
 import ImageCarousel, {
   CarouselImageItem,
 } from "@/components/section/ImageCarousel";
-import ConversionPopup from "@/components/ConversionPopup";
-
 export const demoCarouselItems: CarouselImageItem[] = [
   {
     image: "/carousel/Big Bowl Theory.jpg",
@@ -78,7 +75,6 @@ const IntroVideo = () => {
 const Index = () => {
   const [showDim, setShowDim] = useState(false);
   const [showText, setShowText] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     const dimTimeout = setTimeout(() => setShowDim(true), 6000);
@@ -92,7 +88,7 @@ const Index = () => {
 
   return (
     <>
-      <Navbar onOpenMenu={() => setModalOpen(true)} />
+      <Navbar />
       {/* let the body handle scrolling */}
       <div className="min-h-screen w-full scroll-smooth">
         {/* SECTION 1 - Animated Intro */}
@@ -123,7 +119,7 @@ const Index = () => {
           </div>
         </section>
 
-        <HeroSection onOpenMenu={() => setModalOpen(true)} />
+        <HeroSection />
 
         <section id="attractions">
           <AttractionsSection />
@@ -153,8 +149,6 @@ const Index = () => {
         </section>
       </div>
 
-      <FlipbookModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
-      <ConversionPopup onOpenMenu={() => setModalOpen(true)} />
     </>
   );
 };
